@@ -1,3 +1,8 @@
+/**
+ * Michael Smith
+ * CS 474 Project 2
+ * 11/9/2020
+ */
 #define _REENTRANT
 #include <pthread.h>
 #include <stdio.h>
@@ -78,7 +83,7 @@ void * consumerThread(void * buffer) {
         sem_wait(&mutex);
 
         while(counter < 15) {
-            printf("Reading %c from buffer\n", buf[counter++]);
+            printf("Reading %c from buffer\n", (char)buf[counter++]);
             if(buf[counter] == EOF) break;
             sleep(1);
         }
